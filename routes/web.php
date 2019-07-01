@@ -16,3 +16,6 @@ Route::middleware(['auth'])->group(function() {
 
 Route::get('/phonebook.xml', 'ContactController@xml')->name('contact.xml');
 
+Route::any('{url_param}', function() {
+    abort(404, '404 Error. Page not found!');
+})->where('url_param', '.*');

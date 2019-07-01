@@ -14,10 +14,7 @@
 
             <div class="error-content">
                 <h3><i class="fa fa-warning text-red"></i> Algo deu errado.</h3>
-
-                <p>
-                    Um erro interno está impedindo a página ser exibida.
-                </p>
+                <p>Um erro interno está impedindo a página ser exibida.</p>
             </div>
         </div>
     </section>

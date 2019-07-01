@@ -14,10 +14,7 @@
 
             <div class="error-content">
                 <h3><i class="fa fa-warning text-yellow"></i> Página não encontrada.</h3>
-
-                <p>
-                    Não conseguimos encontrar a página que estava procurando.
-                </p>
+                <p>Não conseguimos encontrar a página que estava procurando.</p>
             </div>
         </div>
     </section>
