@@ -60,6 +60,9 @@
         "post-install-cmd": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
             "@php artisan key:generate",
+            "sudo chown -R www-data:www-data database",
+            "sudo chown -R www-data:www-data storage",
+            "sudo chmod -R 775 storage",
             "touch database/database.sqlite",
             "@php artisan migrate:refresh --seed"
         ]
