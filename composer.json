@@ -56,6 +56,12 @@
             "Illuminate\\Foundation\\ComposerScripts::postUpdate",
             "php artisan ide-helper:generate",
             "php artisan ide-helper:meta"
+        ],
+        "post-install-cmd": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
+            "@php artisan key:generate",
+            "touch database/database.sqlite",
+            "@php artisan migrate:refresh --seed"
         ]
     },
     "config": {
