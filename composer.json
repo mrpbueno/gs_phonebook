@@ -1,7 +1,7 @@
 {
     "name": "mrpbueno/gs_phonebook",
     "description": "Agenda telefonica para telefones Grandstream",
-    "keywords": ["phonebook", "grandstream", "xml"],
+    "keywords": ["phonebook", "grandstream", "xml", "GXP1628"],
     "license": "GPL-3.0-or-later",
     "homepage": "https://github.com/mrpbueno/gs_phonebook",
     "type": "project",
