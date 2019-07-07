@@ -114,12 +114,17 @@ return [
             'icon'    => 'phone',
             'submenu' => [
                 [
+                    'text' => 'Home',
+                    'url'  => '/home',
+                    'icon' => 'home',
+                ],
+                [
                     'text' => 'Novo Contato',
                     'url'  => '/create',
                     'icon' => 'plus',
                 ],
                 [
-                    'text' => 'Importar CSV',
+                    'text' => 'Importar Contato',
                     'url'  => '/import',
                     'icon' => 'upload',
                 ],

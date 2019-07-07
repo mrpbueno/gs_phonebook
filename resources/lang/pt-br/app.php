@@ -17,6 +17,8 @@ return [
     'action'                        => 'Ação',
     'new'                           => 'Novo Contato',
     'home'                          => 'Home',
+    'send'                          => 'Enviar',
+    'save'                          => 'Salvar',
     'message'                       => 'Mensagem',
     'success'                       => 'Sucesso',
     'error'                         => 'Erro',
@@ -25,5 +27,9 @@ return [
     'contact_created'               => 'Contato criado',
     'contact_updated'               => 'Contato atualizado',
     'contact_deleted'               => 'Contato excluído',
+    'contact_imported'              => 'Contato importado',
+    'import_file'                   => 'Importar arquivo',
+    'import_file_label'             => 'Arquivo suportado: xls, xlsx, ou ods',
+    'import_file_help'              => 'Cabeçalho obrigatório: first_name, last_name, department, phone_number_work, phone_number_home, phone_number_cell',
 
 ];

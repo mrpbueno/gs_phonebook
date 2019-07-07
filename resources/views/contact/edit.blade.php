@@ -48,21 +48,24 @@
                                 <label for="phone_number_work">{{ trans('app.phone_number_work') }}</label>
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-phone"></i></span>
-                                    <input type="tel" class="form-control" name="phone_number_work" pattern="[0-9]{3,15}$" value="{{ $contact->phone_number_work }}" required>
+                                    <input type="tel" class="form-control" name="phone_number_work"
+                                           pattern="[0-9]{3,15}$" value="{{ $contact->phone_number_work }}" required>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="phone_number_home">{{ trans('app.phone_number_home') }}</label>
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-phone"></i></span>
-                                    <input type="tel" class="form-control" name="phone_number_home" pattern="[0-9]{3,15}$" value="{{ $contact->phone_number_home }}">
+                                    <input type="tel" class="form-control" name="phone_number_home"
+                                           pattern="[0-9]{3,15}$" value="{{ $contact->phone_number_home }}">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="phone_number_cell">{{ trans('app.phone_number_cell') }}</label>
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-phone"></i></span>
-                                    <input type="tel" class="form-control" name="phone_number_cell" pattern="[0-9]{3,15}$" value="{{ $contact->phone_number_cell }}">
+                                    <input type="tel" class="form-control" name="phone_number_cell"
+                                           pattern="[0-9]{3,15}$" value="{{ $contact->phone_number_cell }}">
                                 </div>
                             </div>
                         </div>
@@ -71,7 +74,8 @@
                     <div class="box-footer">
                         {{ csrf_field() }}
                         {{ method_field('PUT') }}
-                        <button type="submit" class="btn btn-primary"><i class="fa fa-floppy-o" aria-hidden="true"></i> Salvar</button>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fa fa-floppy-o" aria-hidden="true"></i> {{ trans('app.save') }}</button>
                     </div>
                     <!-- /.box-footer -->
                 </form>

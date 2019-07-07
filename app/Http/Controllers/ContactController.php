@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Contact;
+use App\Http\Requests\ContactRequest;
+use App\Http\Requests\ImportRequest;
+use App\Imports\ContactImport;
+use Excel;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
@@ -34,10 +38,10 @@ class ContactController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param Request $request
+     * @param ContactRequest $request
      * @return Response
      */
-    public function store(Request $request)
+    public function store(ContactRequest $request)
     {
         Contact::create($request->all());
         flash(trans('app.contact_created'))->success();
@@ -70,11 +74,11 @@ class ContactController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param Request $request
+     * @param ContactRequest $request
      * @param Contact $contact
      * @return Response
      */
-    public function update(Request $request, Contact $contact)
+    public function update(ContactRequest $request, Contact $contact)
     {
         $contact->update($request->all());
         flash(trans('app.contact_updated'))->success();
@@ -116,6 +120,20 @@ class ContactController extends Controller
 
     public function import()
     {
-        //
+        return view('contact.import');
+    }
+
+    /**
+     * @param ImportRequest $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function importFile(ImportRequest $request)
+    {
+        $path = $request->file('import_file')->getRealPath();
+        Excel::import(new
+        ContactImport, $path);
+        flash(trans('app.contact_imported'))->success();
+
+        return redirect()->route('contact.index');
     }
 }

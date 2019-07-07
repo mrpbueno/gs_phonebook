@@ -6,13 +6,23 @@
     <h1><i class="fa fa-phone"></i> {{ trans('app.phonebook') }}</h1>
     <ol class="breadcrumb">
         <li><i class="fa fa-dashboard"></i> {{ trans('app.home') }}</li>
-        <li class="active">{{ trans('app.phonebook') }}</li>
+        <li>{{ trans('app.phonebook') }}</li>
+        <li class="active">{{ trans('app.new') }}</li>
     </ol>
 @stop
 
 @section('content')
     <section class="content">
         <div class="row">
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <div class="box box-primary">
                 <div class="box-header with-border">
                     <h3 class="box-title"><i class="fa fa-plus"></i> {{ trans('app.new') }}</h3>
@@ -48,21 +58,24 @@
                                 <label for="phone_number_work">{{ trans('app.phone_number_work') }}</label>
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-phone"></i></span>
-                                    <input type="tel" class="form-control" name="phone_number_work" pattern="[0-9]{3,15}$" value="{{ old('phone_number_work') }}" required>
+                                    <input type="tel" class="form-control" name="phone_number_work"
+                                           pattern="[0-9]{3,15}$" value="{{ old('phone_number_work') }}" required>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="phone_number_home">{{ trans('app.phone_number_home') }}</label>
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-phone"></i></span>
-                                    <input type="tel" class="form-control" name="phone_number_home" pattern="[0-9]{3,15}$" value="{{ old('phone_number_home') }}">
+                                    <input type="tel" class="form-control" name="phone_number_home"
+                                           pattern="[0-9]{3,15}$" value="{{ old('phone_number_home') }}">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="phone_number_cell">{{ trans('app.phone_number_cell') }}</label>
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-phone"></i></span>
-                                    <input type="tel" class="form-control" name="phone_number_cell" pattern="[0-9]{3,15}$" value="{{ old('phone_number_cell') }}">
+                                    <input type="tel" class="form-control" name="phone_number_cell"
+                                           pattern="[0-9]{3,15}$" value="{{ old('phone_number_cell') }}">
                                 </div>
                             </div>
                         </div>
@@ -70,7 +83,8 @@
                     <!-- /.box-body -->
                     <div class="box-footer">
                         {{ csrf_field() }}
-                        <button type="submit" class="btn btn-primary"><i class="fa fa-floppy-o" aria-hidden="true"></i> Salvar</button>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fa fa-floppy-o" aria-hidden="true"></i> {{ trans('app.save') }}</button>
                     </div>
                     <!-- /.box-footer -->
                 </form>
