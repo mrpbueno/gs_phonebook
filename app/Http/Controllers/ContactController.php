@@ -7,6 +7,7 @@ use App\Http\Requests\ContactRequest;
 use App\Http\Requests\ImportRequest;
 use App\Imports\ContactImport;
 use Excel;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
@@ -125,13 +126,12 @@ class ContactController extends Controller
 
     /**
      * @param ImportRequest $request
-     * @return \Illuminate\Http\RedirectResponse
+     * @return RedirectResponse
      */
     public function importFile(ImportRequest $request)
     {
         $path = $request->file('import_file')->getRealPath();
-        Excel::import(new
-        ContactImport, $path);
+        Excel::import(new ContactImport, $path);
         flash(trans('app.contact_imported'))->success();
 
         return redirect()->route('contact.index');
