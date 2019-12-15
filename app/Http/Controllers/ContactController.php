@@ -131,7 +131,8 @@ class ContactController extends Controller
      */
     public function importFile(ImportRequest $request)
     {
-        $path = $request->file('import_file')->getRealPath();
+        $temp = $request->file('import_file')->store('temp');
+        $path=storage_path('app').'/'.$temp;
         Excel::import(new ContactImport, $path);
         flash(trans('app.contact_imported'))->success();
 
