@@ -105,7 +105,7 @@ class ContactController extends Controller
     /**
      * @return BinaryFileResponse
      */
-    public function phonebook()
+    public function download()
     {
         $path = base_path().'/storage/app/phonebook.xml';
 
