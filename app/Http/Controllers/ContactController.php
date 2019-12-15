@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Contact;
+use App\Exports\ContactExport;
 use App\Http\Requests\ContactRequest;
 use App\Http\Requests\ImportRequest;
 use App\Imports\ContactImport;
@@ -135,5 +136,10 @@ class ContactController extends Controller
         flash(trans('app.contact_imported'))->success();
 
         return redirect()->route('contact.index');
+    }
+
+    public function export()
+    {
+        return Excel::download(new ContactExport, 'phonebook.xlsx');
     }
 }

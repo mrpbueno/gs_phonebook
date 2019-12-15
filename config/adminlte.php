@@ -129,6 +129,11 @@ return [
                     'icon' => 'upload',
                 ],
                 [
+                    'text' => 'Download XLXS',
+                    'url'  => '/export',
+                    'icon' => 'download',
+                ],
+                [
                     'text' => 'Download XML',
                     'url'  => '/download',
                     'icon' => 'download',

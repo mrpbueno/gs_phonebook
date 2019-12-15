@@ -12,6 +12,7 @@ Route::middleware(['auth'])->group(function() {
     Route::put('/{contact}', 'ContactController@update')->name('contact.update');
     Route::delete('/{contact}', 'ContactController@destroy')->name('contact.destroy');
     Route::get('/download', 'ContactController@download')->name('contact.download');
+    Route::get('/export', 'ContactController@export')->name('contact.export');
     Route::get('/import', 'ContactController@import')->name('contact.import');
     Route::post('/import', 'ContactController@importFile')->name('contact.import.file');
 },'');
