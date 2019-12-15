@@ -11,6 +11,7 @@ use Excel;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use PhpOffice\PhpSpreadsheet\Exception;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
 
 class ContactController extends Controller
@@ -139,6 +140,11 @@ class ContactController extends Controller
         return redirect()->route('contact.index');
     }
 
+    /**
+     * @return \Maatwebsite\Excel\BinaryFileResponse
+     * @throws Exception
+     * @throws \PhpOffice\PhpSpreadsheet\Writer\Exception
+     */
     public function export()
     {
         return Excel::download(new ContactExport, 'phonebook.xlsx');

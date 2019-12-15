@@ -41,6 +41,9 @@ class ContactExport implements FromCollection, WithHeadings, WithColumnFormattin
         ];
     }
 
+    /**
+     * @return array
+     */
     public function columnFormats(): array
     {
         return [
